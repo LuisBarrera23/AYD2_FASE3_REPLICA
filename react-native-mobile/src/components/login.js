@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet, ScrollView } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet, ScrollView, ImageBackground } from "react-native";
 import logo from '../Images/Logo.png';
 import imagen from '../Images/imagen1.jpg';
 import ForgotPassword from "./ForgotPassword";
@@ -87,42 +87,48 @@ const Login = ({ navigation }) => {
 
 
     return (
-        <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-            <View style={styles.container}>
-                <View style={styles.formContainer}>
-                    <Image source={logo} style={styles.logo} />
-                    {
+        <ImageBackground
+            source={require("../Images/Login.jpg")}
+            style={styles.backgroundImage}
+        >
+            <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+                <View style={styles.container}>
+                    <View style={styles.formContainer}>
+                        <Image source={logo} style={[styles.logo, { opacity: 0.7 }]} />
+                        {
 
-                        <View style={styles.form}>
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Email"
-                                value={email}
-                                onChangeText={setEmail}
-                            />
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Password"
-                                secureTextEntry
-                                value={password}
-                                onChangeText={setPassword}
-                            />
-                            <TouchableOpacity onPress={handleLogin} style={styles.button}>
-                                <Text style={styles.buttonText}>Sign in</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={handleForgotPassword} style={styles.forgotPassword}>
-                                <Text style={styles.forgotPasswordText}>Forgot password?</Text>
-                            </TouchableOpacity >
-                            <TouchableOpacity onPress={handleSignUp}>
-                                <Text style={styles.signUpText}>Don't have an account? <Text style={styles.signUpLink}>Sign up here</Text>.</Text>
-                            </TouchableOpacity>
+                            <View style={styles.form}>
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="Email"
+                                    value={email}
+                                    onChangeText={setEmail}
+                                />
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="Password"
+                                    secureTextEntry
+                                    value={password}
+                                    onChangeText={setPassword}
+                                />
+                                <TouchableOpacity onPress={handleLogin} style={styles.button}>
+                                    <Text style={styles.buttonText}>Sign in</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={handleForgotPassword} style={styles.forgotPassword}>
+                                    <Text style={styles.forgotPasswordText}>Forgot password?</Text>
+                                </TouchableOpacity >
+                                <TouchableOpacity onPress={handleSignUp}>
+                                    <Text style={styles.signUpText}>Don't have an account? <Text style={styles.signUpLink}>Sign up here</Text>.</Text>
+                                </TouchableOpacity>
 
-                        </View>
+                            </View>
 
-                    }
+                        }
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </ImageBackground>
+
     );
 };
 
@@ -134,7 +140,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: "rgba(255, 255, 255, 0.3)",
     },
     imageContainer: {
         flex: 1,
@@ -167,6 +173,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         height: 40, // Altura ajustada
         width: '80%', // Ancho ajustado
+        backgroundColor: "rgba(255, 255, 255, 0.7)"
     },
     button: {
         backgroundColor: 'blue',
@@ -196,7 +203,11 @@ const styles = StyleSheet.create({
     signUpLink: {
         color: 'blue',
         fontWeight: 'bold',
-    },
+    },backgroundImage: {
+        flex: 1,
+        resizeMode: "cover", // O ajusta según tu preferencia
+        justifyContent: "center"
+    }
 });
 
 export default Login;
