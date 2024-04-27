@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "react-native-mobile",
+    "slug": "react-native-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.luisbarrera23.reactnativemobile"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "packagerOpts": {
+      "tunnel": {
+        "tunnelType": "ngrok",
+        "tunnelUrl": "http://localhost:19000"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "157aaef7-2d1e-4170-805d-b7a9a80faf7e"
+      },
+      "apiIp": "http://3.144.174.186"
+    }
+  }
+}
