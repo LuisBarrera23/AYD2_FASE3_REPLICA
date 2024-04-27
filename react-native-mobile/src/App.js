@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './components/login';
 import ForgotPassword from './components/ForgotPassword';
+import ForgotPasswordConfirm from './components/ForgotPasswordConfirm';
 
 import Signup from './components/Signup';
 import HomePaciente from './components/HomePaciente';
@@ -28,6 +29,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+        <Stack.Screen name="ForgotPasswordConfirm" component={ForgotPasswordConfirm} />
         <Stack.Screen name="SignUp" component={Signup} />
         <Stack.Screen name="Home Paciente" component={HomePaciente} />
         <Stack.Screen name="Perfil paciente" component={Profile} />
