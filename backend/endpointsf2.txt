@@ -1,0 +1,195 @@
+=================================/comprar============================
+post
+en pago se debe enviar el numero de tarjeta como string o en caso de ser en efectivo se manda el texto quemado "efectivo".
+Direccion se debe de enviar la direccion de domicilio o en caso de que quiera recoger en el hospital se envia quemado "hospital". 
+el frontend tiene que enviar:
+{
+	"productos":[
+		{
+		"id_producto": 1,
+		"cantidad": 2
+		},
+		{
+		"id_producto": 1,
+		"cantidad": 2
+		},
+		{
+		"id_producto": 1,
+		"cantidad": 2
+		}
+	],
+	"pago":"26465265465406 o efectivo",
+	"direccion" " direccion x ó hospital",
+	"id_user":1,
+	"total_compra": 256.25
+}
+
+respuesta correcta:
+{
+	"status": true,
+	"id_compra": "ayesexo69"
+}
+
+respuesta incorrecta:
+{
+	"status": false,
+	"id_compra": ""
+}
+
+
+------------------------- /updateUser HECHO-------------------------
+Tipo: PUT
+Este endpoint se usara para actualizar el perfil de los usuarios.
+Se debe mandar un json de la siguiente forma:
+{
+  "id_user": 5,
+  "nombre": "Rodolfo",
+  "apellido": "Morales",
+  "username": "luisbarrera23",
+  "correo": "luisbarrera5662@gmail.com",
+  "fecha_nac": "2000-11-23",
+  "sexo": "M o F",
+  "newPassword": "87654321", // este seria el nuevo password
+  "currentPassword": "12345678", // validar si este password coincide con el de la db
+  "image": "base64 de la imagen", //
+  "imageBool": True/ False // Si se actualizo la imagen se manda True, sino se actulizo se manda False
+}
+si la actualizacion es exitosa muestra lo siguiente:
+{
+    "message": "Your profile was successfully updated.",
+    "success": true,
+	"user": {
+        "id_user": 5,
+        "nombre": "Luis",
+        "apellido": "Barrera",
+        "fecha_nac": "2000-11-23T06:00:00.000Z",
+        "sexo": "M",
+        "username": "Esteban xd",
+        "password": "b23f1baf404e6908edef40f15dc7d135",
+        "correo": "losafo5890@artgulin.com",
+        "image": "link de la imagen"
+        "rol": 1
+    }
+}
+si la actualizacion falla muestra lo siguiente:
+{
+    "message": "There was a problem updating your profile, try again.",
+    "success": false
+}
+
+================================= /updateProduct/:id_product ============================
+PUT
+Se debe mandar un json de la siguiente forma:
+{
+    id_product: 1,
+    name: "Aspirina",
+    description: "Para el dolor",
+    image: "Link de la imagen del s3",
+    price: 34.5,
+    stock: 69,
+    correo: "Del usuario que actualiza el producto"
+}
+
+retorna lo siguiente:
+{
+    "message": "There was a problem updating the product, try again.",
+    "success": false
+}
+o
+{
+    "message": "Product updated successfully.",
+    "success": true
+}
+
+=================================/getReportes/:id_user ============================
+tipo GET
+Se debe de mandar el id del usuario en la url
+retorna lo siguiente:
+{
+    "reporte1": [ // ultimos 5 usuarios registrados
+        {
+            "name": "Rodolfo Morales", // unir nombre y apellido
+            "email": "Correo del usuario",
+            "username": "Nombre de usuario"
+        },
+        {
+            "name": "Rodolfo Morales 2", // unir nombre y apellido
+            "email": "Correo del usuario",
+            "username": "Nombre de usuario"
+        }
+    ],
+    "reporte2": [ // doctores con mayor cantidad de citas atendidas, mostrar todos los doctores o al menos 5, de mayor citas a menor citas
+        {
+            "name": "Rodolfo Morales", // unir nombre y apellido
+            "email": "Correo del doctor",
+            "username": "Nombre del doctor",
+            "citas": 12 // cantidad de citas atendidas
+        },
+        {
+            "name": "Rodolfo Morales 2", // unir nombre y apellido
+            "email": "Correo del doctor",
+            "username": "Nombre del doctor",
+            "citas": 10 // cantidad de citas atendidas
+        }
+    ],
+    "reporte3": [ // top 3 productos con mayor stock
+        {
+            "name": "nombre del producto",
+            "stock": 25
+       },
+        {
+            "name": "nombre del producto",
+            "stock": 18
+        },
+        {
+            "name": "nombre del producto",
+            "stock": 14
+        }
+    ],
+    "reporte4": [ // top 3 productos con menor stock
+        {
+            "name": "nombre del producto",
+            "stock": 1
+        },
+        {
+            "name": "nombre del producto",
+            "stock": 2
+        },
+        {
+            "name": "nombre del producto",
+            "stock": 3
+        }
+    ],
+    "reporte5": [ // top 3 productos con mayor precio
+        {
+            "name": "nombre del producto",
+            "price": 50.75
+        },
+        {
+            "name": "nombre del producto",
+            "price": 40.00
+        },
+        {
+            "name": "nombre del producto",
+            "price": 33.13
+        }
+    ]
+} 
+
+
+=================================/getBitacora/:id_user ============================
+tipo GET
+Se debe de mandar el id del usuario en la url
+retorna lo siguiente:
+{
+    "bitacora": [
+        {
+            "Fecha_Hora": "dd/mm/yyy - hh:mm:ss",
+            "Descripción": "Se realizo un get"
+        },
+        {
+            "Fecha_Hora": "dd/mm/yyy - hh:mm:ss",
+            "Descripción": "Se realizo un put"
+        }
+    ]
+} 

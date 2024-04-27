@@ -1,0 +1,974 @@
+/* Estilo para acomodr login e imagen */
+.contenedor {
+    display: flex;
+    height: 100vh;
+    /* Ajusta la altura según tus necesidades */
+}
+
+/* Fin Estilo para acomodr login e imagen */
+
+/* Estilo para imagen a la derecha del Login */
+.imagenDiv {
+    flex: 0 0 70%;
+    /* El 70% del ancho */
+    background-color: #f0f0f0;
+    /* Solo para visualización */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagenFavorites {
+    flex: 0 0 20%;
+    /* background-color: linear-gradient(to bottom, #2E46A3, #000E46); */
+    background-color: linear-gradient(to bottom, #3457A4, #0E1F49);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.favoritesDiv {
+    display: flex;
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0015A6, #DCE0FD);
+    border-radius: 10%;
+}
+
+.larger-icon {
+    transform: scale(5);
+    /* Aumentar el tamaño en un factor de 2 */
+}
+
+.imagen {
+    width: 100%;
+    /* La imagen ocupa el 100% del ancho del div */
+    height: 100%;
+    /* La imagen ocupa el 100% de la altura del div */
+    object-fit: cover;
+    /* Ajusta la imagen para cubrir todo el espacio */
+}
+
+/* Estilo para colocar el form a la derecha */
+
+.formularioDiv {
+    flex: 0 0 30%;
+    /* El 30% del ancho */
+
+
+}
+
+/* Estilos para el form */
+.App2 {
+    /* background-color: #282c34; */
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: end;
+    /* justify-content: center; */
+    font-size: calc(10px + 2vmin);
+    color: white;
+    font-family: 'Redressed', cursive;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+input[type="text"],
+input[type="password"] {
+    height: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #01d28e;
+    border: 1px solid #01d28e;
+    color: white;
+    padding: 10px 20px;
+}
+
+input[type="submit"]:hover {
+    background: #6cf0c2;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    flex: 1;
+    background-color: black;
+    color: white;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 4%;
+    padding-top: 10%;
+    min-height: 100vh;
+}
+
+.profile-form {
+    flex: 1;
+    background-color: #0d0c1b;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    font-family: 'Redressed', cursive;
+    font-family: 'Ubuntu Mono', monospace;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+    padding-top: 5%;
+}
+
+.list-container {
+    display: flex;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+.title {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+}
+
+.input-container h3 {
+    margin-bottom: 5px;
+    /* o cualquier otro valor que desees */
+}
+
+.stop-watch {
+    background-color: #0d0c1b;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+}
+
+.timer {
+    margin: 3rem 0;
+    width: 100%;
+    display: flex;
+    height: 12%;
+    justify-content: center;
+    align-items: center;
+}
+
+.digits {
+    font-family: 'Redressed', cursive;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 3rem;
+    color: white;
+}
+
+.mili-sec {
+    color: #e42a2a;
+}
+
+.Control-Buttons {
+    margin: 3rem 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-grp {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn {
+    font-family: 'Redressed', cursive;
+    font-family: 'Ubuntu Mono', monospace;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 14px;
+    margin: 0px 6px;
+    display: flex;
+    border: 2px solid #e42a2a;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-one {
+    background-color: #e42a2a;
+}
+
+.timer-input-wrapper {
+    display: block;
+    text-align: center;
+}
+
+.timer-input-wrapper label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.timer-input-wrapper input {
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+/*Estilos para colocar el logo en el from*/
+
+.centered-container {
+
+    /* Centra verticalmente */
+    width: 100%;
+    height: 100%;
+
+}
+
+.centered-container-posts {
+
+    /* Centra verticalmente */
+    width: 100%;
+    height: 100%;
+
+}
+
+.circle-container {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-image {
+    width: 100%;
+    height: 100%;
+    /* max-width: 30rem; */
+    /* max-height: 30rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-user-image{
+    width: 15rem; 
+    height: 15rem;
+}
+
+.profile-user-image2{
+    width: 20rem; 
+    height: 20rem;
+}
+
+.people-user-image{
+    height: 10.7rem;
+    width: 12.5rem;
+}
+
+.circle-container3 {
+    width: 250px;
+    /* Igual al ancho de la imagen */
+    height: 250px;
+    /* Igual al alto de la imagen */
+    border-radius: 50%;
+    /* Hace que el contenedor sea circular */
+    overflow: hidden;
+    /* Oculta cualquier contenido fuera del círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    flex: 1;
+    height: 100vh;
+    /* 100% de la altura de la pantalla */
+    width: 70vw;
+    /* 70% del ancho de la pantalla */
+    background-color: #f0f0f0;
+    /* Solo para visualizar el área */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.responsive-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-datepicker {
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.audio-player-container {
+    position: fixed;
+    /* Para mantenerlo fijo en la pantalla */
+    bottom: 0;
+    /* Ocupa todo el ancho de la pantalla */
+    background-color: #fff;
+    /* Color de fondo opcional */
+    z-index: 999;
+    min-width: 80%;
+    right: 0;
+    height: 14%;
+    /* Asegura que esté en la parte superior de otros elementos */
+    /* Puedes agregar más estilos según tus preferencias */
+}
+
+.main-page-search-container {
+    z-index: 1000;
+    background-color: #f7f7f8;
+    top: 0vh;
+    position: fixed;
+    width: 80%;
+    right: 0vh;
+    height: 10%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.main-page-liked-container {
+    z-index: 1000;
+    /* background-color: #f7f7f8; */
+    /* background: linear-gradient(to bottom, #2E46A3, #000E46); */
+    /* background: linear-gradient(to bottom, #3000AF, #15004D); */
+    background: linear-gradient(to bottom, #3457A4, #0E1F49);
+    top: 0vh;
+    position: fixed;
+    width: 80%;
+    right: 0vh;
+    height: 30%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.main-page-container {
+    position: fixed;
+    top: 0%;
+    background-color: #f7f7f8;
+    z-index: 999;
+    width: 80%;
+    right: 0vh;
+    height: 100%;
+    padding: 3rem;
+}
+
+.main-page-liked-table-container {
+    position: fixed;
+    top: 0%;
+    /* background-color: #10003A; */
+    /* background-color: #13043B; */
+    background-color: #08173C;
+    z-index: 999;
+    width: 80%;
+    right: 0vh;
+    height: 86%;
+    padding: 3rem;
+    overflow-y: auto;
+    padding-top: 3rem;
+}
+
+a:hover {
+    color: red;
+}
+
+.my-style-card:hover {
+    background-color: #3A00DC !important;
+    cursor: pointer;
+}
+
+.like-btn {
+    background: none;
+    border: 0;
+    padding: 0;
+}
+
+.like-btn:hover {
+    transform: scale(1.3) !important;
+}
+
+.search-cursor {
+    cursor: pointer;
+}
+
+.like-btn .button-text {
+    display: inline;
+}
+
+.like-btn .button-icon {
+    display: none;
+}
+
+.like-btn:hover .button-text {
+    display: none;
+}
+
+.like-btn:hover .button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para pantallas más pequeñas (por ejemplo, celulares) */
+@media (max-width: 1020px) {
+    .contenedor {
+        flex-direction: column;
+        /* Apila los divs verticalmente en pantallas pequeñas */
+    }
+
+    .imagenDiv {
+        /* flex: none; */
+        /* No ocupar espacio en pantallas pequeñas */
+        /* display: none; */
+        /* Ocultar la imagen en pantallas pequeñas */
+        order: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .formularioDiv {
+        flex: 1;
+        order: 0;
+        position: relative;
+        z-index: 2;
+        /* Ocupar todo el espacio en pantallas pequeñas */
+    }
+
+    .login-form {
+        opacity: 0.9;
+    }
+
+    .centered-container {
+        /* Centra verticalmente */
+        height: 15rem;
+    }
+
+    .centered-container-posts {
+        /* Centra verticalmente */
+        height: 10rem;
+    }
+
+    .centered-container-posts2 {
+        /* Centra verticalmente */
+        height: 10rem;
+    }
+
+    .profile-form {
+        height: 40rem;
+    }
+
+    .profile-card {
+        height: 25rem;
+    }
+
+    .card-friend {
+        min-width: 20rem;
+        max-width: 20rem;
+    }
+
+    .profile-user-image2{
+        width: 15rem; 
+        height: 15rem;
+    }
+
+    .people-user-image{
+        height: 10.7rem;
+        width: 8rem;
+    }
+}
+
+@media (max-width: 990px) {
+    .people-user-image{
+        height: 10.7rem;
+        width: 20rem;
+    }
+}
+
+.select-Comobox {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white#0a6004;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.camera-frame {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #001F3F, #800080, #FFA500);
+    /* Colores en tonos de naranja relacionados con wildfire */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.container-camera {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: white;
+}
+
+.buttons-camera {
+    height: auto;
+    width: auto;
+    margin: 5px;
+}
+
+.profile-card {
+    flex: 1;
+    background-color: #0d0c1b;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    font-family: 'Redressed', cursive;
+    font-family: 'Ubuntu Mono', monospace;
+    height: 22rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h5:hover {
+    cursor: pointer;
+}
+
+.input-message {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin: 10px;
+}
+
+.chat-app {
+    margin-top: 5px;
+    flex-direction: column;
+    /* Para que los elementos se apilen verticalmente */
+    height: 70%;
+    /* Toma la altura completa de la ventana */
+    width: 100%;
+    padding: 2px;
+    /* Añade un espacio alrededor del chat */
+    background-color: #ffffff;
+    /* Color de fondo del chat */
+    border: 1px solid #1f04e8;
+    /* Borde opcional */
+    border-radius: 15px;
+    overflow-x: auto;
+}
+
+
+.chat-friends {
+    width: 100%;
+    padding: 2px;
+    /* Añade un espacio alrededor */
+    background-color: #f0f0f0;
+    /* Color de fondo */
+    border: 1px solid #1f04e8;
+    /* Borde opcional */
+    border-radius: 15px;
+    flex-direction: row;
+    display: flex;
+
+}
+
+.card-friend {
+    min-width: 8rem;
+    max-width: 8rem;
+    height: 100%;
+    border: solid 1px rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+    /* Agrega una transición suave para el cambio de color */
+    border-radius: 15px;
+    overflow-y: auto;
+    margin-right: 0.35rem;
+}
+
+.card-friend:hover {
+    cursor: pointer;
+    background-color: #3D6CFF;
+    color: white;
+    /* Cambia el color del texto cuando se pasa el cursor sobre el elemento */
+}
+
+.card-username {
+    font-size: 12px;
+    width: 100%;
+    text-align: left;
+    max-height: 8vh;
+    overflow-x: auto;
+    white-space: normal;
+}
+
+.card-username span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.container-chat {
+    overflow: auto;
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column-reverse;
+    /* Coloca los elementos de abajo a arriba */
+    height: 85%;
+}
+
+.container-right {
+    text-align: right;
+    /* Alinea el contenido a la derecha dentro del contenedor */
+    max-width: 50%;
+    /* Ancho máximo del 50% del contenedor padre */
+    word-wrap: break-word;
+    /* Rompe las palabras largas si es necesario */
+    margin-left: auto;
+    padding: 2px;
+}
+
+.message-right {
+    display: inline-block;
+    /* Hace que el div se ajuste al contenido */
+    padding: 3px;
+    /* Espacio interno (ajústalo según tus necesidades) */
+    background-color: #0080FD;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+
+.container-left {
+    text-align: left;
+    /* Alinea el contenido a la izquierda dentro del contenedor */
+    max-width: 50%;
+    /* Ancho máximo del 50% del contenedor padre */
+    word-wrap: break-word;
+    /* Rompe las palabras largas si es necesario */
+    padding: 3px;
+    /* Espacio interno (ajústalo según tus necesidades) */
+}
+
+.message-left {
+    display: inline-block;
+    /* Hace que el div se ajuste al contenido */
+    padding: 3px;
+    /* Espacio interno (ajústalo según tus necesidades) */
+    background-color: #F1F1F1;
+    color: black;
+    font-size: 18px;
+    border-radius: 10px;
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    border: 1px solid black;
+}
+
+
+@media (max-width: 500px) {
+    .container-left {
+        text-align: left;
+        /* Alinea el contenido a la izquierda dentro del contenedor */
+        max-width: 90%;
+        /* Ancho máximo del 50% del contenedor padre */
+    }
+
+    .container-right {
+        text-align: right;
+        max-width: 90%;
+    }
+
+    .profile-user-image{
+        width: 10rem; 
+        height: 10rem;
+    }
+
+    .profile-user-image2{
+        width: 10rem; 
+        height: 10rem;
+    }
+    
+    .people-user-image{
+        height: 10.7rem;
+        width: 9rem;
+    }
+}
+@media (max-width: 308px) {
+    .people-user-image{
+        height: 10.7rem;
+        width: 7rem;
+    }
+}
+@media (max-width: 1200px) {
+    .people-user-image{
+        height: 10.7rem;
+        width: 10rem;
+    }
+}
+
+
+
+/*ESTILOS PDFS*/
+
+.contenedor-pdf-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .pdf-item {
+    text-align: center;
+    margin: 15px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    max-width: 150px;
+    overflow-x: auto;
+  }
+  
+  .pdf-icono {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .pdf-nombre-descargable {
+    color: #3498db;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 5px;
+  }
+  
+  .pdf-nombre-descargable:hover {
+    text-decoration: none; 
+  }
+
+  /*Estilos consultas*/
+
+  .consultas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .consulta-selector {
+    margin-bottom: 20px;
+
+  }
+  
+  .marco-cuadrado {
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #d1f7ab;
+  }
+  
+  .marco-cuadrado h3 {
+    margin-bottom: 10px;
+  }
+  
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.custom-overlay {
+    background-color: rgba(128, 128, 128, 1); /* Fondo gris sólido */
+  }
+  
+  .custom-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #007bff; /* Borde azul */
+    border-radius: 20px; /* Aumenta el radio para hacerlo menos compacto */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+  
+  .custom-modal-header {
+    background-color: #007bff; /* Color de encabezado */
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 8px; /* Redondear esquinas superiores */
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .custom-modal-title {
+    margin: 0;
+  }
+  
+  .custom-modal-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .custom-modal-close:hover {
+    text-decoration: underline;
+  }
+  
+  .custom-modal-content {
+    background-color: white; /* Fondo blanco para el contenido */
+    border-radius: 8px; 
+  }
+  
+  .custom-modal-padding {
+    background-color: #f0f0f0; /* Color de fondo para el padding */
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .modal-footer {
+    display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0; /* Puedes ajustar el color de fondo según tu preferencia */
+  border-top: 1px solid #dee2e6; /* Línea superior */
+  padding: 20px;
+  border-radius: 0 0 8px 8px;
+  }
+
+
+  
+  .custom-modal-padding label {
+    font-weight: bold; /* Estilo en negrita para las etiquetas */
+    display: block; /* Mostrar cada etiqueta en una línea nueva */
+    margin-bottom: 5px; /* Espaciado inferior */
+  }
+  
+  .custom-modal-padding p {
+    margin: 0 0 10px; /* Eliminar el espacio entre párrafos y agregar espaciado inferior */
+  }
+  
+  .custom-modal-padding input {
+    width: 100%; /* Ocupar el ancho completo del contenedor */
+    padding: 8px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado inferior */
+  }
+  
+  .custom-modal-padding button {
+    width: 100%; /* Ocupar el ancho completo del contenedor */
+    padding: 0px;
+  }
+
+
+  .agendado {
+    color: blue !important;
+    text-align: center;
+  }
+  
+  .atendido {
+    color: green !important;
+    text-align: center;
+  }
+  
+  .cancelado {
+    color: red !important;
+    text-align: center;
+  }
+
+  ul.horizontal-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  ul.horizontal-list li {
+    margin-right: 50px; /* Espacio entre los elementos */
+  }

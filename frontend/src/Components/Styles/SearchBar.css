@@ -1,0 +1,53 @@
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* Cambio el ancho al 70% */
+
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
+  font-family: 'Ubuntu Mono', monospace;
+
+}
+
+.search-bar-container input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar-container button {
+  background-color: #1db954;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Alinea el contenido en el centro */
+}
+
+.search-bar-container button:hover {
+  background-color: #198c3f;
+}
+
+
+.buttonClose {
+ background: transparent;
+  border: none;
+  color: none;
+  padding: 10px 15px;
+  width: auto ;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

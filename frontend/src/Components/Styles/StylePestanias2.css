@@ -1,0 +1,78 @@
+.tabsAdmin2 {
+    width: 100%;
+    background: #0d0c1b;
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    padding: 0; /* Elimina el espacio interno del contenedor ul */
+    border-radius: 12px;
+    font-family: 'Ubuntu Mono', monospace;
+    border:solid #13b807 2px;
+}
+
+ul.tabsAdmin2 {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+ul.tabsAdmin2 li {
+    width: 50%;
+    border-radius: 10px;
+}
+
+ul.tabsAdmin2 li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 19px;
+    text-align: center;
+    display: block;
+    padding: 10px 0px; /* Ajusta el espaciado vertical y horizontal */
+    width: 100%;
+    border-radius: 10px;
+ 
+}
+
+.active{
+	background: #0984CC;
+    border-radius: 10px;
+}
+
+.secciones {
+    width: 100%;
+    font-family: 'Ubuntu Mono', monospace;
+    background:#0d0c1b;
+    border-radius: 10px;
+}
+
+
+.secciones article {
+    padding: 30px;
+}
+
+.secciones article p {
+    text-align: justify;
+}
+
+@media screen and (max-width: 700px) {
+    ul.tabsAdmin2 li {
+        width: none;
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    ul.tabsAdmin2 li a {
+        padding: 15px 0px;
+    }
+
+    ul.tabsAdmin2 li a .tab-text {
+        display: none;
+    }
+
+    .secciones article {
+        padding: 20px;
+    }
+}

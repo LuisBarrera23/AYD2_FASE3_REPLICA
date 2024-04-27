@@ -1,0 +1,484 @@
+------------------------- /adduser (Actualizar) HECHO -------------------------
+este endpoint se usara para mandar el registro de nuevos usuarios ya sea para registro o para poder cargar por medio de carga masiva.
+Se debe mandar un json de la siguiente forma:
+{
+  "nombre": "Luis",
+  "apellido": "Barrera",
+  "fecha_nac": "2000-11-23",
+  "sexo": "M",
+  "username": "luisbarrera23",
+  "password": "12345678",
+  "correo": "luisbarrera5662@gmail.com",
+  "image": "base64 de la imagen",
+  "rol": 1
+}
+si el registro es exitoso muestra lo siguiente:
+{
+    "message": "Successfully registered user, please check your email inbox.",
+    "success": true
+}
+si el registro es fallido muestra lo siguiente:
+{
+    "message": "Username or email already exists.",
+    "success": false
+}
+hay 3 tipos de roles, los cuales son los siguientes:
+0. admin
+1. doctor
+2. paciente
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> develop
+
+
+=================================login (Actualizar) HECHO============================ 
+
+Se debe mandar un json de la siguiente forma:
+{
+  "correo":"losafo5890@artgulin.com",
+  "password":"Godplan2*"
+}
+
+Respuesta Exitosa:
+{
+    "success": true,
+    "user": {
+        "id_user": 5,
+        "nombre": "Luis",
+        "apellido": "Barrera",
+        "fecha_nac": "2000-11-23T06:00:00.000Z",
+        "sexo": "M",
+        "username": "Esteban xd",
+        "password": "b23f1baf404e6908edef40f15dc7d135",
+        "correo": "losafo5890@artgulin.com",
+        "image": "link de la imagen"
+        "rol": 1
+    }
+}
+
+Respuesta fallida:
+{ 
+  "success": false, 
+  "message": 'User not found in the database' 
+}
+
+=================================forgotPassword============================
+Se debe mandar un json de la siguiente forma:
+
+{
+  "correo":"losafo5890@artgulin.com"
+}
+
+Respuesta Correcta:
+{
+    "success": true,
+    "message": "A verification code has been sent to your email"
+}
+
+Respuesta fallida:
+{
+    "success": false,
+    "message": "F dirían los chavos xd"
+}
+
+=================================confirmPasswordReset============================
+Se debe mandar un json de la siguiente forma:
+Nota el "verificationCode" es el codigo que llega por correo electronico
+{
+  "correo":"losafo5890@artgulin.com",
+  "verificationCode":"585940",
+  "newPassword":"Godplan2*"
+}
+
+
+Respuesta Correcta:
+{
+    "success": true,
+    "message": "Password reset successfully"
+}
+
+Respuesta fallida:
+{
+    "success": false,
+    "message": "F dirían los chavos xd"
+}
+
+
+
+=================================/addCita============================
+post
+Se debe mandar un json de la siguiente forma:
+La lista de citas sera las citas de ese usuario del id_user actualizada.
+{
+  "id_user": 1,
+  "descripcion":"tengo chorrillo xd",
+  "fecha":"2024-04-23"
+}
+
+
+Respuesta Correcta:
+{
+    "success": true,
+    "list": [
+      {
+        "id_cita" : 1,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "en espera",
+        "fecha" : "2024-04-23",
+        "hora" : ""
+      },
+      {
+        "id_cita" : 2,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 3,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 4,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "cancelada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      }
+    ]
+}
+
+Respuesta fallida:
+{
+    "success": false,
+    "list": [
+      {
+        "id_cita" : 1,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "en espera",
+        "fecha" : "2024-04-23",
+        "hora" : ""
+      },
+      {
+        "id_cita" : 2,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 3,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 4,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "cancelada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      }
+    ]
+}
+
+
+
+
+
+=================================/cancelCita============================
+put
+Se debe mandar un json de la siguiente forma:
+La lista de citas sera las citas de ese usuario del id_user actualilzada.
+{
+<<<<<<< HEAD
+  "id_cita": 1
+=======
+  "id_cita": 1,
+  "id_user": 1
+>>>>>>> develop
+}
+
+
+Respuesta Correcta:
+{
+    "success": true,
+    "list": [
+      {
+        "id_cita" : 1,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "en espera",
+        "fecha" : "2024-04-23",
+        "hora" : ""
+      },
+      {
+        "id_cita" : 2,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 3,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 4,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "cancelada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      }
+    ]
+}
+
+Respuesta fallida:
+{
+    "success": false,
+    "list": [
+      {
+        "id_cita" : 1,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "en espera",
+        "fecha" : "2024-04-23",
+        "hora" : ""
+      },
+      {
+        "id_cita" : 2,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 3,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 4,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "cancelada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      }
+    ]
+}
+
+
+=================================/getCitas/id_user============================
+get
+Se debe mandar el id_user por medio del endpoint no por json.
+
+
+Respuesta Correcta:
+{
+    "list": [
+      {
+        "id_cita" : 1,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "en espera",
+        "fecha" : "2024-04-23",
+        "hora" : ""
+      },
+      {
+        "id_cita" : 2,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 3,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "agendada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      },
+      {
+        "id_cita" : 4,
+        "doctor" : "Carlos Herrera",
+        "Descripcion" : "tengo chorrillo xd",
+        "estado" : "cancelada",
+        "fecha" : "2024-04-23",
+        "hora" : "20:00"
+      }
+    ]
+}
+<<<<<<< HEAD
+=======
+>>>>>>> 85dc142 (register)
+=======
+>>>>>>> develop
+
+
+
+=================================/getCitasEsperando/id_user============================
+tipo get
+Se debe mandar el id_user por medio del endpoint no por json.
+retorna lo siguiente:
+{
+    "list": [
+        {
+            "id_cita": 1,
+            "paciente": "Rodolfo Morales",
+            "Descripcion": "Tengo chorrillo xd",
+            "estado": "En espera",
+            "fecha": "2024-03-04T06:00:00.000Z",
+            "hora": "00:00:00"
+        },
+        {
+            "id_cita": 2,
+            "paciente": "Rodolfo Morales",
+            "Descripcion": "Tengo dolor de cabeza",
+            "estado": "En espera",
+            "fecha": "2024-03-02T06:00:00.000Z",
+            "hora": "00:00:00"
+        }
+    ]
+}
+
+
+=================================/agendarCita============================
+put
+Se debe mandar un json de la siguiente forma:
+La lista de citas sera las citas en espera (estado 0) actualilzada.
+{
+  "id_cita": 1,
+  "id_user_doctor": 1,
+  "hora": 20:00
+}
+
+retorna lo siguiente:
+{
+    "list": [
+        {
+            "id_cita": 1,
+            "paciente": "Rodolfo Morales",
+            "Descripcion": "Tengo chorrillo xd",
+            "estado": "En espera",
+            "fecha": "2024-03-04T06:00:00.000Z",
+            "hora": "00:00:00"
+        },
+        {
+            "id_cita": 2,
+            "paciente": "Rodolfo Morales",
+            "Descripcion": "Tengo dolor de cabeza",
+            "estado": "En espera",
+            "fecha": "2024-03-02T06:00:00.000Z",
+            "hora": "00:00:00"
+        }
+    ]
+}
+
+=================================/getCitasDoctor/:id_user_doctor============================
+get
+No se debe mandar json, el id del doctor va en la url
+
+retorna lo siguiente:
+{
+    "list": [
+        {
+            "id_cita": 1,
+            "paciente": "Rodolfo Morales",
+            "Descripcion": "Tengo chorrillo xd",
+            "estado": "Agendado",
+            "fecha": "2024-03-04T06:00:00.000Z",
+            "hora": "10:00:00"
+        },
+        {
+            "id_cita": 3,
+            "paciente": "Rodolfo Morales",
+            "Descripcion": "Tengo dolor de huevos xd",
+            "estado": "Agendado",
+            "fecha": "2024-03-05T06:00:00.000Z",
+            "hora": "20:00:00"
+        }
+    ]
+}
+
+=================================/atenderCita============================
+put
+Se debe mandar un json de la siguiente forma:
+La lista de citas sera las citas del doctor del id_user_doctor.
+{
+  "id_cita": 1,
+  "id_user_doctor": 1
+}
+
+retorna lo siguiente:
+{
+    "list": [
+        {
+            "id_cita": 1,
+            "paciente": "Rodolfo Morales",
+            "Descripcion": "Tengo chorrillo xd",
+            "estado": "En espera",
+            "fecha": "2024-03-04T06:00:00.000Z",
+            "hora": "00:00:00"
+        },
+        {
+            "id_cita": 2,
+            "paciente": "Rodolfo Morales",
+            "Descripcion": "Tengo dolor de cabeza",
+            "estado": "En espera",
+            "fecha": "2024-03-02T06:00:00.000Z",
+            "hora": "00:00:00"
+        }
+    ]
+}
+
+
+=================================/products/:id_user============================
+get
+Se debe de mandar el id del usuario en la url
+retorna lo siguiente:
+{
+    "products": [
+        {
+            "id_product": 1,
+            "image": Link de la imagen,
+            "name": "Nombre producto",
+            "description": "Descripcion producto",
+            "price": 55.25,
+            "stock": true
+        },
+        {
+            "id_product": 2,
+            "image": Link de la imagen,
+            "name": "Nombre producto",
+            "description": "Descripcion producto",
+            "price": 54.25,
+            "stock": false
+        }
+    ]
+}

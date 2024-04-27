@@ -1,0 +1,59 @@
+// PARA PEDIR EL LISTADO DE DOCTORES
+METODO: GET 
+ENPOINT: /getDoctores
+RECIBE:
+    [{ id_user: 0, nombre: "Juan"},{},ETC]
+
+// PARA ELIMINAR UN DOCTOR
+METODO: POST
+ENPONT: eliminarDoctor
+MANDA:
+    {
+        id_user: 123
+    }
+RECIBE:
+    {
+        data:{},
+        messege: "Operacion exitosa" || "Operacion fallida",
+        error: false || true
+    }
+
+
+// PARA PEDIR EL LISTADO DE Usuarios
+METODO: GET 
+ENPOINT: /getUsuarios
+RECIBE:
+    [{ id_user: 0, nombre: "Juan"},{},ETC]
+
+// PARA ELIMINAR UN USUARIO
+METODO: POST
+ENPONT: eliminarUsuario
+MANDA:
+    {
+        id_user: 123
+    }
+RECIBE:
+    {
+        data:{},
+        messege: "Operacion exitosa" || "Operacion fallida",
+        error: false || true
+    }
+
+
+// PARA INGRESAR UN PRODUCTO
+METODO: POST
+ENPOINT:
+MANDA:
+    {
+        nombre: "algo",
+        descripcion: "algo2",
+        precio: 123,
+        imagen: "asd.png",
+        stock: 1
+    }
+RECIBE:
+    {
+        data:{},
+        messege: "Operacion exitosa" || "Operacion fallida",
+        error: false || true
+    }
