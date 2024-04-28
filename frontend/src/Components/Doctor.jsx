@@ -89,18 +89,18 @@ function Doctor() {
                                 </Link>
                             </li>
                             <li className="nav-link">
-                                <Link onClick={() => setIndexOptions(1)}>
+                                <Link id="navegar_atender" onClick={() => setIndexOptions(1)}>
                                     <i className='bx bx-calendar-x icon'></i>
                                     <span className="text nav-text">Atender Citas</span>
                                 </Link>
                             </li>
                             <li className="nav-link">
-                                <Link onClick={() => setIndexOptions(2)}>
+                                <Link id="navegar_atenderFinal" onClick={() => setIndexOptions(2)}>
                                     <i className='bx bx-calendar-heart icon'></i>
                                     <span className="text nav-text">Historial de Citas</span>
                                 </Link>
                             </li>
-                            <li className="nav-link">
+                            <li id="navegar_updateP" className="nav-link">
                                 <Link onClick={() => setIndexOptions(3)}>
                                 <i className='bx bxs-edit icon'></i>
                                     <span className="text nav-text">Editar productos</span>
@@ -124,7 +124,7 @@ function Doctor() {
                             </div>
                             <span className="mode-text text">Dark mode</span>
 
-                            <div className="toggle-switch" onClick={handleToggleSwitchClick}>
+                            <div   id="switch_dark" className="toggle-switch" onClick={handleToggleSwitchClick}>
                                 <span className="switch"></span>
                             </div>
                         </li>

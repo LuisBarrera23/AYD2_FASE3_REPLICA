@@ -1,19 +1,18 @@
-describe('Eliminar Doctor', () => {
+describe('Atender cita desde Doctor', () => {
     beforeEach(() => {
-        cy.viewport(1280, 820); // Establecer las dimensiones del viewport
-        cy.visit('http://localhost:3000'); // Visitar la página
-        cy.get('input[type="email"]').type('gamesusac@gmail.com'); // Llenar el campo de correo electrónico
-        cy.get('input[type="password"]').type('Admin123*'); // Llenar el campo de contraseña
-        cy.contains('Sign in').click(); // Hacer clic en el botón de inicio de sesión
-        cy.url().should('include', '/admin'); // Verificar que la URL incluya '/admin'
-        cy.wait(1000); // Esperar un segundo
+        cy.viewport(1280, 820); 
+        cy.visit('http://localhost:3000'); 
+        cy.get('input[type="email"]').type('coxlajsansebastian3b@gmail.com'); 
+        cy.get('input[type="password"]').type('Holamundo2*'); 
+        cy.contains('Sign in').click(); 
+        cy.url().should('include', '/doctor'); 
+        cy.wait(1000); 
     });
 
-    it('debería agregar un producto correctamente', () => {
+    it('Debe atender una cita de forma correcta', () => {
 
-        // Navega a la página de creación de citas
-        cy.get('#navegar_cargaD').click();
+        cy.get('#navegar_atenderFinal').click();
         cy.wait(1000);
-
+        cy.get('button.btn-success').last().click();
     });
 });
