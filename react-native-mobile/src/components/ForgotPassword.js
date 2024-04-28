@@ -1,18 +1,42 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Modal, StyleSheet } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Alert  } from "react-native";
+import config from '../../config';
+
 
 const ForgotPassword = ({ navigation }) => {
     const [email, setEmail] = useState("");
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [code, setCode] = useState("");
-    const [newpass, setNewpass] = useState("");
+    const apiIp = config.apiIp;
+    
 
     const handleResetPassword = () => {
         if (email !== "") {
-            // Lógica para enviar el correo electrónico de restablecimiento de contraseña
-            setModalIsOpen(true);
+            const data = {
+                correo: email,
+            };
+    
+            fetch(`${apiIp}:5000/forgotPassword`, { // Reemplaza YOUR_API_IP con la IP de tu servidor
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then((response) => response.json())
+            .then((res) => {
+                if (res.message === "A verification code has been sent to your email") {
+                    Alert.alert(res.message);
+                    navigation.navigate("ForgotPasswordConfirm")
+                    setEmail("")
+                    
+                } else {
+                    Alert.alert("Error", res.message); // Muestra un mensaje de error en caso contrario
+                }
+            })
+            .catch((error) => console.error(error));
         } else {
-            alert("Please enter your email.");
+            Alert.alert("Error", "Please enter your email.");
+            // navigation.navigate("ForgotPasswordConfirm")
+
         }
     };
 
@@ -20,81 +44,63 @@ const ForgotPassword = ({ navigation }) => {
         navigation.navigate("Login")
     };
 
-    const handleCloseModal = () => {
-        setModalIsOpen(false);
-    };
 
-    const handleSubmit = async () => {
-        try {
-            // Lógica para confirmar el restablecimiento de contraseña
-            alert("Password reset successfully!");
-        } catch (error) {
-            console.error('Error en la solicitud fetch', error);
-        }
-        setNewpass("");
-        setCode("");
-        handleCloseModal();
-    };
+
 
     return (
-        <View style={styles.container}>
-            <View style={styles.inputContainer}>
-                <Text style={styles.label}>Email</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Enter email"
-                    value={email}
-                    onChangeText={setEmail}
-                />
-            </View>
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={handleForgotPassword} style={styles.button}>
-                    <Text style={styles.buttonText}>Back</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={handleResetPassword} style={[styles.button, styles.resetButton]}>
-                    <Text style={styles.buttonText2}>Reset password</Text>
-                </TouchableOpacity>
-            </View>
-
-            <Modal
-                visible={modalIsOpen}
-                onRequestClose={handleCloseModal}
-            >
-                <View style={styles.modalContainer}>
-                    <Text style={styles.modalTitle}>Enter the code and reset password</Text>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Code"
-                        value={code}
-                        onChangeText={setCode}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        placeholder="New Password"
-                        secureTextEntry
-                        value={newpass}
-                        onChangeText={setNewpass}
-                    />
-                    <TouchableOpacity onPress={handleSubmit} style={[styles.button, styles.submitButton]}>
-                        <Text style={styles.buttonText}>Send</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={handleCloseModal} style={[styles.button, styles.cancelButton]}>
-                        <Text style={styles.buttonText}>Cancel</Text>
-                    </TouchableOpacity>
+        <ImageBackground
+            source={require("../Images/imagenForgot.jpg")}
+            style={styles.backgroundImage}
+        >
+            <View style={styles.container}>
+                <View style={styles.container2}>
+                    <View style={styles.inputContainer}>
+                        <Text style={styles.label}>Email</Text>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Enter email"
+                            value={email}
+                            onChangeText={setEmail}
+                        />
+                    </View>
+                    <View style={styles.buttonContainer}>
+                        <TouchableOpacity onPress={handleForgotPassword} style={styles.button}>
+                            <Text style={styles.buttonText}>Back</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={handleResetPassword} style={[styles.button, styles.resetButton]}>
+                            <Text style={styles.buttonText2}>Reset password</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </Modal>
-        </View>
+
+
+            </View>
+        </ImageBackground>
     );
 };
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
         justifyContent: 'center',
+        backgroundColor: "rgba(255, 255, 255, 0.3)", // Fondo semitransparente
+    },container2: {
+        flex: 1,
+        justifyContent: 'center',
+        width: "auto",
+        maxHeight: 200,
+        padding: 15,
+        borderRadius: 10,
+        backgroundColor: "rgba(255, 255, 255, 0.9)", // Fondo semitransparente
+    },
+    backgroundImage: {
+        flex: 1,
+        resizeMode: "cover", // O ajusta según tu preferencia
+        justifyContent: "center"
     },
     inputContainer: {
         marginBottom: 20,
+        backgroundColor: "rgba(255, 255, 255, 0.8)"
     },
     label: {
         marginBottom: 5,

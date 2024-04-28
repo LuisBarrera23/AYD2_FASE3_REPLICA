@@ -3,10 +3,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './components/login';
 import ForgotPassword from './components/ForgotPassword';
+import ForgotPasswordConfirm from './components/ForgotPasswordConfirm';
 
 import Signup from './components/Signup';
 import HomePaciente from './components/HomePaciente';
 import Profile from './components/Profile';
+import ScheduleAppointment from './components/ScheduleAppointment';
 import HomeDoctor from './components/HomeDoctor';
 
 import HomeAdmin from './components/HomeAdmin';
@@ -18,6 +20,8 @@ import EliminarUsuario from './components/EliminarUsuario';
 import Reportes from './components/Reportes';
 import ListaCitas from './components/DAtenderCita';
 import HistorialCitas from './components/DHistorialCita';
+import Products from './components/Products';
+import HistorialCitasPaciente from './components/HistorialCitaPaciente';
 
 const Stack = createStackNavigator();
 
@@ -27,9 +31,13 @@ const App = () => {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+        <Stack.Screen name="ForgotPasswordConfirm" component={ForgotPasswordConfirm} />
         <Stack.Screen name="SignUp" component={Signup} />
         <Stack.Screen name="Home Paciente" component={HomePaciente} />
         <Stack.Screen name="Perfil paciente" component={Profile} />
+        <Stack.Screen name="Programar cita" component={ScheduleAppointment} />
+        <Stack.Screen name="Ver productos" component={Products} />
+        <Stack.Screen name="Historial citas paciente" component={HistorialCitasPaciente} />
 
         <Stack.Screen name="Panel Administrador" component={HomeAdmin} />
         <Stack.Screen name="Panel Doctor" component={HomeDoctor} />
