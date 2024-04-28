@@ -11,7 +11,7 @@ function HomePaciente({ navigation }) {
         <Button title="Programar cita" onPress={() => navigation.navigate('Programar cita')} color="#007bff" />
       </View>
       <View style={styles.buttonContainer}>
-        <Button title="Comprar productos" onPress={() => navigation.navigate('Comprar productos')} color="#007bff" />
+        <Button title="Ver productos" onPress={() => navigation.navigate('Ver productos')} color="#007bff" />
       </View>
       <View style={styles.buttonContainer}>
         <Button title="Historial de citas" onPress={() => navigation.navigate('Historial de citas')} color="#007bff" />

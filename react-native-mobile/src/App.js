@@ -20,6 +20,7 @@ import EliminarUsuario from './components/EliminarUsuario';
 import Reportes from './components/Reportes';
 import ListaCitas from './components/DAtenderCita';
 import HistorialCitas from './components/DHistorialCita';
+import Products from './components/Products';
 
 const Stack = createStackNavigator();
 
@@ -34,6 +35,7 @@ const App = () => {
         <Stack.Screen name="Home Paciente" component={HomePaciente} />
         <Stack.Screen name="Perfil paciente" component={Profile} />
         <Stack.Screen name="Programar cita" component={ScheduleAppointment} />
+        <Stack.Screen name="Ver productos" component={Products} />
 
         <Stack.Screen name="Panel Administrador" component={HomeAdmin} />
         <Stack.Screen name="Panel Doctor" component={HomeDoctor} />
