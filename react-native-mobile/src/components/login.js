@@ -50,10 +50,10 @@ const Login = ({ navigation }) => {
                                         setEmail("");
                                         setPassword("");
                                         if (dataUser.rol === 0) {
-                                            Alert.alert('Login', 'Ir a la pantalla admin');
+                                            // Alert.alert('Login', 'Ir a la pantalla admin');
                                             navigation.navigate('Panel Administrador');
                                         } else if (dataUser.rol === 1) {
-                                            Alert.alert('Login', 'Ir a la pantalla doctor');
+                                            // Alert.alert('Login', 'Ir a la pantalla doctor');
                                             navigation.navigate('Panel Doctor');
                                         } else if (dataUser.rol === 2) {
                                             navigation.navigate('Home Paciente');
