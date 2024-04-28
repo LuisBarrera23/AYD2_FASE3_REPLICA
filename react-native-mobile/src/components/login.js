@@ -47,8 +47,8 @@ const Login = ({ navigation }) => {
                                 {
                                     text: 'OK',
                                     onPress: () => {
-                                        // setEmail("");
-                                        // setPassword("");
+                                        setEmail("");
+                                        setPassword("");
                                         if (dataUser.rol === 0) {
                                             Alert.alert('Login', 'Ir a la pantalla admin');
                                             navigation.navigate('Panel Administrador');

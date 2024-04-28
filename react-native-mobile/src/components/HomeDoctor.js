@@ -18,6 +18,8 @@ function HomeDoctor({ navigation }) {
   return (
     <View>
       <Text></Text>
+      <Button title="Perfil" onPress={() => navigation.navigate('Perfil paciente')} color="#007bff" />
+      <Text></Text>
       <Button title="Atender Citas" onPress={() => navigation.navigate('Atender Citas')} />
       <Text></Text>
       <Button title="Historial Citas" onPress={() => navigation.navigate('Historial Citas')} />
