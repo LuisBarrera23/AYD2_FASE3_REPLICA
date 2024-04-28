@@ -37,10 +37,10 @@ function Profile() {
         const fecha = new Date(dataUser.fecha_nac);
         const formattedDate = fecha.toISOString().split('T')[0];
 
-        const dia = fecha.getDate();
-        const mes = fecha.getMonth() + 1;
-        const anio = fecha.getFullYear();
-        const fechaFormateada = `${dia}/${mes}/${anio}`;
+        // const dia = fecha.getDate();
+        // const mes = fecha.getMonth() + 1;
+        // const anio = fecha.getFullYear();
+        // const fechaFormateada = `${dia}/${mes}/${anio}`;
         setBirthDate(formattedDate);
 
         if (dataUser.sexo === 'M') {

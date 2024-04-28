@@ -110,6 +110,7 @@ function EditProducts() {
                                                 {
                                                     productoEditando && productoEditando.id_product === product.id_product ? (
                                                         <Input
+                                                            id="inputEditP"
                                                             type="text"
                                                             required
                                                             style={{ color: "black" }}
@@ -161,6 +162,7 @@ function EditProducts() {
                                                 {
                                                     productoEditando && productoEditando.id_product === product.id_product ? (
                                                         <Input
+                                                        id="inputEditSt"
                                                             type="text"
                                                             required
                                                             style={{ color: "black" }}

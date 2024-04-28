@@ -162,7 +162,7 @@ function Admin() {
                             </div>
                             <span className="mode-text text">Dark mode</span>
 
-                            <div className="toggle-switch" onClick={handleToggleSwitchClick}>
+                            <div id="switch_dark" className="toggle-switch" onClick={handleToggleSwitchClick}>
                                 <span className="switch"></span>
                             </div>
                         </li>

@@ -8,7 +8,7 @@ function agregarContenidoArchivo(usuario, endpoint, contenido) {
     const horaFormateada = fechaHoraActual.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
     
-    const registro = `${fechaFormateada} ${horaFormateada} - Usuario: ${usuario} - Endpoint: ${endpoint} - Acción: ${contenido}, `;
+    const registro = `${fechaFormateada} ${horaFormateada} - Usuario: ${usuario} - Endpoint: ${endpoint} - Acción: ${contenido}, \n`;
 
    
     fs.appendFile("Logs_Backend.txt", registro, (error) => {

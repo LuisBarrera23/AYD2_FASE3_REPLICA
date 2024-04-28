@@ -10,14 +10,12 @@ describe('Actualizacion de datos', () => {
     cy.url().should('include', '/homepaciente');
   });
   
-  it('should update profile successfully', () => {
-    // Intercepta la llamada AJAX y maneja la respuesta del servidor
+  it('Dbería actualizar los datos de forma correcta', () => {
+
     cy.intercept('PUT', '**/updateUser').as('updateUser');
     
-    // Navega a la página de perfil
     cy.visit('http://localhost:3000/homepaciente');
     
-    // Ingresa los nuevos valores para el perfil
     cy.get('#inputfullname').clear().type('Luis');
     cy.wait(1000);
     cy.get('#inputlastname').clear().type('Perez');
@@ -29,14 +27,12 @@ describe('Actualizacion de datos', () => {
     cy.get('#inputpassword').clear().type('Holamundo1*');
     cy.wait(1000);
     
-    // Envía el formulario de actualización
     cy.contains('Update').click();
     
-    // Espera a que la llamada AJAX se complete
     cy.wait('@updateUser').then((interception) => {
       // Obtiene la respuesta del servidor
       const { response } = interception;
-      // Verifica que la respuesta del servidor contenga el mensaje deseado
+      
       expect(response.body.message).to.equal('Your profile was successfully updated.');
     });
   });
