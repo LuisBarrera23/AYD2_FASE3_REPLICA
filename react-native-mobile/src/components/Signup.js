@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, ScrollView, Alert } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, ScrollView, Alert, ImageBackground } from "react-native";
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { format } from 'date-fns';
@@ -110,111 +110,117 @@ const Signup = ({ navigation }) => {
     };
 
     return (
-        <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-            <View style={styles.container}>
+        <ImageBackground
+            source={require("../Images/Login.jpg")}
+            style={styles.backgroundImage}
+        >
+            <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+                <View style={styles.container}>
 
-                <View style={styles.formContainer}>
-                    <Image source={require('../Images/Logo.png')} style={styles.logo} />
+                    <View style={styles.formContainer}>
+                        <Image source={require('../Images/Logo.png')} style={styles.logo} />
 
-                    <View style={styles.form}>
-                        <Text style={styles.label}>Name</Text>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Enter your name"
-                            value={name}
-                            onChangeText={setName}
-                        />
-
-                        <Text style={styles.label}>Last Name</Text>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Enter your last name"
-                            value={lastName}
-                            onChangeText={setLastName}
-                        />
-
-                        <Text style={styles.label}>Username</Text>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Enter your username"
-                            value={username}
-                            onChangeText={setUserName}
-                        />
-
-                        <Text style={styles.label}>Email Address</Text>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Enter email"
-                            value={email}
-                            onChangeText={setEmail}
-                        />
-
-                        <Text style={styles.label}>Gender</Text>
-                        <Picker
-                            selectedValue={gender}
-                            style={styles.pickerSelect}
-                            onValueChange={(itemValue, itemIndex) => setGender(itemValue)}
-                        >
-                            <Picker.Item label="Select Gender" value="" />
-                            <Picker.Item label="Male" value="M" />
-                            <Picker.Item label="Female" value="F" />
-                        </Picker>
-                        <Text style={styles.label}>Birthdate</Text>
-                        {isDatePickerVisible && (
-                            <DateTimePicker
-                                testID="dateTimePicker"
-                                value={birthdate}
-                                mode={'date'}
-                                is24Hour={true}
-                                display="default"
-                                onChange={(event, selectedDate) => {
-                                    const currentDate = selectedDate || birthdate;
-                                    setBirthdate(currentDate);
-                                    setDatePickerVisibility(false);
-                                }}
+                        <View style={styles.form}>
+                            <Text style={styles.label}>Name</Text>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Enter your name"
+                                value={name}
+                                onChangeText={setName}
                             />
-                        )}
-                        <TouchableOpacity onPress={() => setDatePickerVisibility(true)} style={styles.dateButton}>
-                            <Text style={styles.input}>{birthdate ? formattedDate : 'Select Birthdate'}</Text>
-                        </TouchableOpacity>
 
-                        <Text style={styles.label}>Password</Text>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Password"
-                            value={password}
-                            onChangeText={setPassword}
-                            secureTextEntry
-                        />
+                            <Text style={styles.label}>Last Name</Text>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Enter your last name"
+                                value={lastName}
+                                onChangeText={setLastName}
+                            />
 
-                        <TouchableOpacity onPress={handleImagePick} style={{ backgroundColor: 'lightgray', padding: 10, marginBottom: 10 }}>
-                            <Text>Seleccionar Imagen</Text>
-                        </TouchableOpacity>
+                            <Text style={styles.label}>Username</Text>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Enter your username"
+                                value={username}
+                                onChangeText={setUserName}
+                            />
+
+                            <Text style={styles.label}>Email Address</Text>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Enter email"
+                                value={email}
+                                onChangeText={setEmail}
+                            />
+
+                            <Text style={styles.label}>Gender</Text>
+                            <Picker
+                                selectedValue={gender}
+                                style={styles.pickerSelect}
+                                onValueChange={(itemValue, itemIndex) => setGender(itemValue)}
+                            >
+                                <Picker.Item label="Select Gender" value="" />
+                                <Picker.Item label="Male" value="M" />
+                                <Picker.Item label="Female" value="F" />
+                            </Picker>
+                            <Text style={styles.label}>Birthdate</Text>
+                            {isDatePickerVisible && (
+                                <DateTimePicker
+                                    testID="dateTimePicker"
+                                    value={birthdate}
+                                    mode={'date'}
+                                    is24Hour={true}
+                                    display="default"
+                                    onChange={(event, selectedDate) => {
+                                        const currentDate = selectedDate || birthdate;
+                                        setBirthdate(currentDate);
+                                        setDatePickerVisibility(false);
+                                    }}
+                                />
+                            )}
+                            <TouchableOpacity onPress={() => setDatePickerVisibility(true)} style={styles.dateButton}>
+                                <Text style={styles.input}>{birthdate ? formattedDate : 'Select Birthdate'}</Text>
+                            </TouchableOpacity>
+
+                            <Text style={styles.label}>Password</Text>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Password"
+                                value={password}
+                                onChangeText={setPassword}
+                                secureTextEntry
+                            />
+
+                            <TouchableOpacity onPress={handleImagePick} style={{ backgroundColor: 'lightgray', padding: 10, marginBottom: 10 }}>
+                                <Text>Seleccionar Imagen</Text>
+                            </TouchableOpacity>
 
 
 
 
-                        {imagenBase64 && <Image source={{ uri: imagenBase64 }} style={{ width: 200, height: 200, marginBottom: 10 }} />}
+                            {imagenBase64 && <Image source={{ uri: imagenBase64 }} style={{ width: 200, height: 200, marginBottom: 10 }} />}
 
 
-                        <TouchableOpacity onPress={handleSignup} style={styles.signupButton}>
-                            <Text style={styles.buttonText}>Sign Up</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
-                            <Text style={styles.loginText}>You already have an account? Sign in <Text style={styles.loginLink}>here</Text>.</Text>
-                        </TouchableOpacity>
-                        
+                            <TouchableOpacity onPress={handleSignup} style={styles.signupButton}>
+                                <Text style={styles.buttonText}>Sign Up</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
+                                <Text style={styles.loginText}>You already have an account? Sign in <Text style={styles.loginLink}>here</Text>.</Text>
+                            </TouchableOpacity>
+
+                        </View>
                     </View>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </ImageBackground>
+
     );
 };
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: "rgba(255, 255, 255, 0.3)",
     },
     formContainer: {
         flex: 2,
@@ -227,6 +233,9 @@ const styles = StyleSheet.create({
     },
     form: {
         width: '80%',
+        backgroundColor: "rgba(255, 255, 255, 0.5)",
+        padding: 10,
+        borderRadius: 15
     },
     label: {
         fontSize: 16,
@@ -278,7 +287,11 @@ const styles = StyleSheet.create({
     loginLink: {
         color: '#007bff',
         textDecorationLine: 'underline',
-    },
+    },backgroundImage: {
+        flex: 1,
+        resizeMode: "cover", // O ajusta según tu preferencia
+        justifyContent: "center"
+    }
 });
 
 export default Signup;
